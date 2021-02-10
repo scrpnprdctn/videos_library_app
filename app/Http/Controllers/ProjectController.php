@@ -14,10 +14,12 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return view('index',[
-            'projects' => Project::orderBy('id', 'DESC')->get(),
-            'bestproject' => Project::all()->last()
-        ]);
+        if(Project::where('published', 1)){
+            return view('index',[
+                'projects' => Project::orderBy('id', 'DESC')->get(),
+                'bestproject' => Project::all()->last()
+            ]);
+        }
     }
 
     /**
@@ -63,7 +65,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        $project = Project::find($project)->first();
+        $project = Project::where('id', $project->id)->first();
         return view('edit', compact('project'));
     }
 
@@ -96,5 +98,11 @@ class ProjectController extends Controller
         $data = file_get_contents("http://vimeo.com/api/v2/video/$url.json");
         $data = json_decode($data);
         return $data[0]->thumbnail_large;
+    }
+
+    public static function getVimeoDesc($url) {
+        $data = file_get_contents("http://vimeo.com/api/v2/video/$url.json");
+        $data = json_decode($data);
+        return $data[0]->user_name;
     }
 }

@@ -2,6 +2,10 @@
 
 @section('content')
 
+<?php 
+use \App\Http\Controllers\ProjectController;
+?>
+
   <section class="section">
 
     
@@ -32,19 +36,12 @@
                   <hr>
                   <div class="columns has-text-centered">
     
-                    <div class="column is-4 is-offset-1">
-                      <ul>
-                        <li></li>
-                        <li>Directed by blabla</li>
-                        <li>Directed by blabla</li>
-                      </ul>
-                    </div>
-                    <div class="column is-4 is-offset-1">
-                      <ul>
-                        <li>Directed by blabla</li>
-                        <li>Directed by blabla</li>
-                        <li>Directed by blabla</li>
-                      </ul>
+                    <div class="column is-12">
+                      
+                      <p class="">
+                        Uploaded by {{ ProjectController::getVimeoDesc("$output_array[6]") }}
+                      </p>
+
                     </div>
                   </div>
                 </div>

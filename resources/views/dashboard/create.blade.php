@@ -47,15 +47,8 @@
                   </div>
 
                   <div class="field">
-                      <label class="label">Crédits</label>
-                      <div class="control">
-                      <textarea class="textarea is-small" placeholder="e.g. Hello world">Directed by blabla DOP by blabla</textarea>
-                      </div>
-                  </div>
-
-                  <div class="field">
                       <label class="checkbox is-size-7">
-                          <input type="checkbox">
+                          <input type="checkbox" name="published" value="1">
                           Published
                       </label>
                   </div>

@@ -45,8 +45,9 @@
 
                   <div class="field">
                       <label class="checkbox is-size-7">
-                          <input type="checkbox">
-                          Published
+                        <input type="hidden" name="published" value="0">
+                        <input type="checkbox" @if($project->published) : checked="checked" ? '' @endif name="published" value="1">
+                        Published
                       </label>
                   </div>
                   

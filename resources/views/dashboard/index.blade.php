@@ -27,7 +27,10 @@
                         <td width="5%"><i class="fa fa-check"></i></td>
                         <td>{{ $p->title }}</td>
                         <td>{{ $p->published_at }}</td>
-                        <td><span class="tag is-warning is-light">Not Published</span></td>
+                        <td>@if($p->published)<span class="tag is-success is-light">Published</span>
+                        @else <span class="tag is-danger is-light">Not Published</span>
+                        @endif
+                        </td>
                         <td width="5%"><a class="button is-light is-small is-primary" href="../edit/{{$p->slug}}">Edit</a></td>
                         <td width="5%"><a href="#" class="button is-light is-small">  
                           <form method="post" action="{{ route('admin.destroy', ['id' => $p->id]) }}">

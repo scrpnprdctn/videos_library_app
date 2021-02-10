@@ -1,7 +1,10 @@
 @extends('layout.master')
 
 @section('content')
-
+ 
+<?php 
+use \App\Http\Controllers\ProjectController;
+?>
 
         <div class="columns">
 
@@ -26,6 +29,20 @@
                           </span>
                       </div>
                   </div>
+
+                  <?php if(preg_match("/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/?(showcase\/)*([0-9))([a-z]*\/)*([0-9]{6,11})[?]?.*/", $project->url, $output_array)) ?>
+
+                  <div class="field">
+                    <label class="label">Original Title</label>
+                    <div class="control has-icons-left">
+                        <input type="text" disabled name="url" class="input is-small" placeholder="" value="{{ ProjectController::getVimeoTitle("$output_array[6]") }}">
+                        <span class="icon is-small is-left">
+                            <i class="fa fa-link"></i>
+                        </span>
+                    </div>
+                </div>
+
+                
                   <div class="field">
                       <label class="label">URL</label>
                       <div class="control has-icons-left">
@@ -37,11 +54,22 @@
                   </div>
 
                   <div class="field">
+                    <label class="label">SLUG</label>
+                    <div class="control has-icons-left">
+                        <input type="text" name="slug" class="input is-small" placeholder="" value="{{ $project->slug }}">
+                        <span class="icon is-small is-left">
+                            <i class="fa fa-link"></i>
+                        </span>
+                    </div>
+                </div>
+
+
+                  {{-- <div class="field">
                       <label class="label">Crédits</label>
                       <div class="control">
                       <textarea class="textarea is-small" placeholder="e.g. Hello world">Directed by blabla DOP by blabla</textarea>
                       </div>
-                  </div>
+                  </div> --}}
 
                   <div class="field">
                       <label class="checkbox is-size-7">

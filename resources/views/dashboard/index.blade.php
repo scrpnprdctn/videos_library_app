@@ -24,9 +24,6 @@
                 <tbody>
                   @foreach ($projects as $p)
                     <tr>
-                      
-                          
-                     
                         <td width="5%"><i class="fa fa-check"></i></td>
                         <td>{{ $p->title }}</td>
                         <td>{{ $p->published_at }}</td>

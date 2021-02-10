@@ -1,5 +1,5 @@
     @extends('layout.master')
-    @section('title', 'Home')
+    @section('title', 'MSCVDO')
     @section('content')
     
     <?php 

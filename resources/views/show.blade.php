@@ -39,7 +39,7 @@ use \App\Http\Controllers\ProjectController;
                     <div class="column is-12">
                       
                       <p class="">
-                        Uploaded by {{ ProjectController::getVimeoDesc("$output_array[6]") }}
+                        Uploaded by <a href="{{ ProjectController::getVimeoAuthorUrl("$output_array[6]") }}">{{ ProjectController::getVimeoAuthor("$output_array[6]") }}</a>
                       </p>
 
                     </div>

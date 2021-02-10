@@ -100,9 +100,22 @@ class ProjectController extends Controller
         return $data[0]->thumbnail_large;
     }
 
-    public static function getVimeoDesc($url) {
+    public static function getVimeoAuthor($url) {
         $data = file_get_contents("http://vimeo.com/api/v2/video/$url.json");
         $data = json_decode($data);
         return $data[0]->user_name;
+    }
+
+    public static function getVimeoAuthorUrl($url) {
+        $data = file_get_contents("http://vimeo.com/api/v2/video/$url.json");
+        $data = json_decode($data);
+        return $data[0]->user_url;
+    }
+
+    public static function getVimeoDuration($url) {
+        $data = file_get_contents("http://vimeo.com/api/v2/video/$url.json");
+        $data = json_decode($data);
+        $duration = $data[0]->duration;
+        return gmdate("i:s", $duration);
     }
 }

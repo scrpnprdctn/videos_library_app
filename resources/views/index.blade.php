@@ -9,7 +9,7 @@
         <div class="columns">
             <div class="column is-12">
                 <div class="box">
-                    <a href="show.php">
+                    <a href="{{ $bestproject->slug }}">
                         
                     <?php preg_match("/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/?(showcase\/)*([0-9))([a-z]*\/)*([0-9]{6,11})[?]?.*/", $bestproject->url, $output_array); ?>
                     <img class="ontop-image" style="" src="{{ ProjectController::getVimeoThumb("$output_array[6]") }}">
@@ -37,7 +37,7 @@
                     <?php preg_match("/(https?:\/\/)?(www\.)?(player\.)?vimeo\.com\/?(showcase\/)*([0-9))([a-z]*\/)*([0-9]{6,11})[?]?.*/", $p->url, $output_array); ?>
                     <img class="thumbnail-img" src="{{ ProjectController::getVimeoThumb("$output_array[6]") }}">
                     <br><a href="{{ $p->slug }}" class="is-size-7 is-uppercase is-size-6-mobile has-text-weight-medium">{{ $p->title }}</a>
-                    <span class="tag is-light mt-2">Music Video</span>
+                    <br><span class="tag is-light mt-2">Music Video</span><span class="tag is-light ml-2 mt-2">{{ ProjectController::getVimeoDuration("$output_array[6]") }} <i class="ml-1 far fa-hourglass"></i></span>
                 </div>
             </div>
 

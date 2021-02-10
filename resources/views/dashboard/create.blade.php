@@ -1,5 +1,4 @@
 @extends('layout.master')
-
 @section('content')
 
 
@@ -42,6 +41,26 @@
                             <input type="text" name="url" class="input is-small" placeholder="" value="{{ old('url') }}">
                             <span class="icon is-small is-left">
                                 <i class="fa fa-link"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Keywords</label>
+                        <div class="control has-icons-left">
+                            <input type="text" name="meta_keywords" class="input is-small" placeholder="Comma separated" value="{{ old('meta_keywords') }}">
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-tag"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="label">Description</label>
+                        <div class="control has-icons-left">
+                            <input type="text" name="meta_description" class="input is-small" placeholder="Description" value="{{ old('meta_description') }}">
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-tag"></i>
                             </span>
                         </div>
                     </div>

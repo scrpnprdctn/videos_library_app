@@ -1,6 +1,8 @@
 @extends('layout.master')
 
 @section('title', isset($project->title) ? $project->title : 'title')
+@section('meta_keywords', isset($project->meta_keywords) ? $project->meta_keywords : 'None')
+@section('meta_description', isset($project->meta_description) ? $project->meta_description : 'None')
 @section('content')
 
 <?php 

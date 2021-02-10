@@ -1,5 +1,7 @@
     @extends('layout.master')
     @section('title', 'MSCVDO')
+    @section('meta_keywords', 'music video, musicvideos, vimeo, musicvideo, staffpick, boooooom, directorslibrary, directors, director, cinema, fiction, anton tammi')
+    @section('meta_description', 'MSCVDO - The Best Music Videos')
     @section('content')
     
     <?php 
@@ -9,7 +11,6 @@
         <div class="columns">
             <div class="column is-12">
                 <div class="box">
-                    <h1 class="has-text-centered title is-size-2 is-uppercase is-family-code">Top Of The Week <i class="fa fa-award"></i></h1>
                     @if($bestproject->bestcontent == 1)
                     <a href="{{ $bestproject->slug }}">
                         
@@ -46,11 +47,6 @@
             @endif
             @endforeach
 
-        </div>
-
-
-        <div class="box">
-            
         </div>
 
 @endsection

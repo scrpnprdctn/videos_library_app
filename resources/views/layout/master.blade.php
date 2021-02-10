@@ -172,6 +172,10 @@
       
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
+
+            <a href="interviews" class="navbar-item">
+              Interviews
+            </a>
             <!-- <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link">
                 More

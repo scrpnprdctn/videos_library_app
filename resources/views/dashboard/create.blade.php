@@ -16,42 +16,51 @@
                 <form action="{{ route('admin.store') }}" method="post" class="box">
                     @csrf
 
-                  <div class="field">
-                      <label class="label">Title</label>
-                      <div class="control has-icons-left">
-                          <input type="text" name="title" class="input is-small" placeholder="" value="{{ old('title') }}">
-                          <span class="icon is-small is-left">
-                              <i class="fa fa-heading"></i>
-                          </span>
-                      </div>
-                  </div>
-
-                  <div class="field">
-                    <label class="label">Slug</label>
-                    <div class="control has-icons-left">
-                        <input type="text" name="slug" class="input is-small" placeholder="" value="{{ old('slug') }}">
-                        <span class="icon is-small is-left">
-                            <i class="fa fa-heading"></i>
-                        </span>
+                    <div class="field">
+                        <label class="label">Title</label>
+                        <div class="control has-icons-left">
+                            <input type="text" name="title" class="input is-small" placeholder="" value="{{ old('title') }}">
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-heading"></i>
+                            </span>
+                        </div>
                     </div>
-                </div>
 
-                  <div class="field">
-                      <label class="label">URL</label>
-                      <div class="control has-icons-left">
-                          <input type="text" name="url" class="input is-small" placeholder="" value="{{ old('url') }}">
-                          <span class="icon is-small is-left">
-                              <i class="fa fa-link"></i>
-                          </span>
-                      </div>
-                  </div>
+                    <div class="field">
+                        <label class="label">Slug</label>
+                        <div class="control has-icons-left">
+                            <input type="text" name="slug" class="input is-small" placeholder="" value="{{ old('slug') }}">
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-heading"></i>
+                            </span>
+                        </div>
+                    </div>
 
-                  <div class="field">
-                      <label class="checkbox is-size-7">
-                          <input type="checkbox" name="published" value="1">
-                          Published
-                      </label>
-                  </div>
+                    <div class="field">
+                        <label class="label">URL</label>
+                        <div class="control has-icons-left">
+                            <input type="text" name="url" class="input is-small" placeholder="" value="{{ old('url') }}">
+                            <span class="icon is-small is-left">
+                                <i class="fa fa-link"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label class="checkbox is-size-7">
+                            <input type="hidden" name="published" value="0">
+                            <input type="checkbox" name="published" value="1">
+                            Published
+                        </label>
+                    </div>
+
+                    <div class="field">
+                        <label class="checkbox is-size-7">
+                        <input type="hidden" name="bestcontent" value="0">
+                        <input type="checkbox" name="bestcontent" value="1">
+                        Top Of The Month
+                        </label>
+                    </div>
                   
                   <div class="field">
                       <button type="submit" class="button is-small is-light is-success">

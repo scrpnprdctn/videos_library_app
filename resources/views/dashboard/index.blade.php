@@ -24,7 +24,7 @@
                 <tbody>
                   @foreach ($projects as $p)
                     <tr>
-                        <td width="5%"><i class="fa fa-check"></i></td>
+                        <td width="5%">@if($p->bestcontent)<i class="fa fa-trophy"></i> @endif</td>
                         <td>{{ $p->title }}</td>
                         <td>{{ $p->published_at }}</td>
                         <td>@if($p->published)<span class="tag is-success is-light">Published</span>

@@ -50,6 +50,13 @@
                         Published
                       </label>
                   </div>
+                  <div class="field">
+                    <label class="checkbox is-size-7">
+                      <input type="hidden" name="bestcontent" value="0">
+                      <input type="checkbox" @if($project->bestcontent) : checked="checked" ? '' @endif name="bestcontent" value="1">
+                      Top Of The Month
+                    </label>
+                </div>
                   
                   <div class="field">
                       <button type="submit" class="button is-small is-light is-success">
